@@ -1,23 +1,7 @@
-# Hemasree Randhi — Portfolio (Next.js + Tailwind)
+## 👋 Hi, I’m Hemasree
 
-## Quickstart
-```bash
-pnpm i # or npm install / yarn
-pnpm dev # http://localhost:3000
-```
-## Tech
-- Next.js (App Router) + TypeScript
-- Tailwind CSS (utility-first)
-- Simple dark/light theme toggle
-- Data-driven projects via `data/projects.json`
+I built this portfolio using **Next.js 14**, **TypeScript**, and **Tailwind CSS**.  
+It’s a clean, scroll-based single-page site designed to showcase my **skills, projects, and experience**.  
 
-## Customize
-- Update `data/projects.json`
-- Drop your resume as `/public/Hemasree_Randhi_Resume.pdf`
-- Edit contact links in `app/contact/page.tsx`
-
-## Deploy
-- Vercel: Import the repo, set framework to Next.js, deploy.
-
-## License
-MIT
+From a technical side, it uses **Formspree** for the contact form, is fully **responsive**, and is deployed on **Vercel** for fast, reliable hosting.  
+My goal was to create a portfolio that’s simple for recruiters to explore while also reflecting my engineering focus on performance, clean code, and modern tools.
