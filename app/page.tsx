@@ -67,7 +67,13 @@ export default function Home() {
       {/* SKILLS */}
       <section
         id="experience"
-        className="snap-start min-h-screen flex flex-col items-center justify-center px-4 text-center"
+        className="min-h-dvh md:min-h-screen
+    flex flex-col items-center justify-center
+    px-4 text-center
+    overflow-y-auto md:overflow-visible
+    overscroll-contain
+    pb-16
+    md:snap-start"
       >
         <h2 className="text-3xl font-bold mb-3">Skills</h2>
         <p className="opacity-80 text-sm mb-8 max-w-2xl">
@@ -115,7 +121,7 @@ export default function Home() {
             More skills <span aria-hidden>▾</span>
           </summary>
 
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 pb-24">
             <Postcard title="Databases" emoji="🗄️">
               <div className="flex flex-wrap justify-center gap-2">
                 {['PostgreSQL','MySQL','NoSQL','Delta Lake','Hive'].map(s => (

@@ -26,3 +26,7 @@ html { scroll-behavior: smooth; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+html { scroll-behavior: smooth; }
+html, body { height: 100%; text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
+

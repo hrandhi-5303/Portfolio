@@ -6,11 +6,14 @@ export const metadata = {
   title: 'Hemasree Randhi — Software Engineer',
   description: 'Portfolio'
 }
-
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+}
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="h-full">
-      <body className="bg-black text-white h-full">
+      <body className="bg-black text-white">
         {/* Animated background behind everything */}
         <Starfield />
 
@@ -30,9 +33,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main
           className="
             relative z-10
-            h-screen overflow-y-auto
-            snap-y snap-mandatory
-            pt-16  /* offset for the fixed header */
+            md:h-screen h-dvh
+            overflow-y-auto
+            md:snap-y md:snap-mandatory
+            pt-16
+            overscroll-contain
           "
         >
           {/* display: contents flattens the wrapper so your sections
