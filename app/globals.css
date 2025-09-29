@@ -1,0 +1,28 @@
+@tailwind base; @tailwind components; @tailwind utilities;
+
+html, body { background:#000; color:#fff; }
+html { scroll-behavior: smooth; }
+.container { @apply mx-auto max-w-5xl px-4; }
+
+/* subtle section dividers */
+.section { @apply py-20 border-b border-white/10; }
+
+/* Heading animation (no blinking cursor) */
+.typewriter { display:inline-block; overflow:hidden; white-space:nowrap;
+  animation: typing 2.2s steps(24,end) .2s both; }
+@keyframes typing { from { width:0 } to { width:100% } }
+
+/* Big section numerals (01, 02...) on the left */
+.num { @apply absolute -left-10 top-0 text-5xl font-bold text-white/10; }
+
+.animated-bg {
+  background: linear-gradient(-45deg, #000, #111, #222, #000);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
