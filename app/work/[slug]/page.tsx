@@ -9,6 +9,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }) {
   const study = studies.find((s) => s.slug === params.slug);
   return {
+    description: study?.summary,
     title: study ? `${study.title} — Hemasree Randhi` : "Case study not found",
   };
 }
@@ -18,8 +19,11 @@ export default function CaseStudy({ params }: { params: { slug: string } }) {
   const next = studies[(studies.indexOf(study) + 1) % studies.length];
   return (
     <article className="wrap case-study">
-      <Link className="text-link" href="/#work">
-        ← Back to selected work
+      <Link
+        className="text-link"
+        href={study.slug === "ai-data-intelligence" ? "/#research" : "/#work"}
+      >
+        ← Back to portfolio
       </Link>
       <header className="case-header">
         <div>

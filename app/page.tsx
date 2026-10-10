@@ -1,24 +1,29 @@
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
 import { Developer, Sketch } from "@/components/Illustration";
-import { studies, skillGroups } from "@/content/portfolio";
+import {
+  professionalStudies,
+  researchStudy,
+  skillGroups,
+  experience,
+} from "@/content/portfolio";
 export default function Home() {
   return (
     <>
       <section className="hero wrap" id="home">
         <div className="hero-copy">
-          <p className="eyebrow">SOFTWARE ENGINEER · BUILDER · CURIOUS HUMAN</p>
-          <h1>
-            Complex systems.
-            <br />
-            Thoughtfully <em>simple.</em>
+          <p className="eyebrow">HEMASREE RANDHI · SENIOR AI & DATA ENGINEER</p>
+          <h1 className="data-headline">
+            I build reliable data systems and turn complex data into{" "}
+            <em>intelligence.</em>
           </h1>
           <p className="intro">
-            Hi, I’m Hemasree. I build reliable software at the intersection of
-            full-stack engineering, cloud platforms, and intelligent data.
+            I design and engineer scalable data platforms, distributed
+            processing pipelines, reconciliation systems, and AI-ready solutions
+            across financial services and telecommunications.
           </p>
           <p className="hero-note">
-            Clean APIs. Observable systems. Features that work.
+            Validation at the boundaries. Traceability through the pipeline.
           </p>
           <div className="hero-links">
             <a className="button" href="#work">
@@ -39,7 +44,7 @@ export default function Home() {
           <span className="handwritten">a little code, a lot of care.</span>
         </div>
         <div className="hero-bottom">
-          <span>Python / React / AWS</span>
+          <span>Python / SQL / PySpark / Azure</span>
           <a href="#work">SCROLL TO EXPLORE ↓</a>
         </div>
       </section>
@@ -57,7 +62,7 @@ export default function Home() {
           </p>
         </div>
         <div className="work-list">
-          {studies.map((study) => (
+          {professionalStudies.map((study) => (
             <Link
               key={study.slug}
               className="work-row"
@@ -80,17 +85,43 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="wrap section" id="projects">
+      <section className="wrap section research" id="research">
         <div className="section-heading" data-reveal>
-          <p className="eyebrow">02 / OTHER PROJECTS</p>
+          <p className="eyebrow">RESEARCH / AI EXPLORATION</p>
           <h2>
-            More things
+            From data to <em>intelligence.</em>
+          </h2>
+          <p>Proposed prototypes, kept separate from professional delivery.</p>
+        </div>
+        <Link
+          className="work-row"
+          href="/work/ai-data-intelligence"
+          data-reveal
+        >
+          <div className="work-art">
+            <Sketch kind="ai" />
+          </div>
+          <div>
+            <h3>{researchStudy.title}</h3>
+            <p>{researchStudy.summary}</p>
+            <span className="project-status">{researchStudy.status}</span>
+          </div>
+          <span className="work-arrow" aria-hidden="true">
+            ↗
+          </span>
+        </Link>
+      </section>
+      <section className="wrap section earlier-projects" id="projects">
+        <div className="section-heading" data-reveal>
+          <p className="eyebrow">02 / EARLIER PROJECTS</p>
+          <h2>
+            Earlier things
             <br />
             I’ve <em>built.</em>
           </h2>
           <p>
-            Small explorations. Practical problems.
-            <br />A good reason to learn something new.
+            Earlier academic and personal projects in AI, mobile, and web
+            development.
           </p>
         </div>
         <div className="other-grid">
@@ -140,17 +171,17 @@ export default function Home() {
             [
               "01",
               "Understand before building",
-              "Translate business requirements into clear boundaries, useful APIs, and a plan the team can share.",
+              "Translate reporting and reconciliation requirements into source-to-target mappings, explicit comparison rules, and clear data models.",
             ],
             [
               "02",
               "Make reliability a feature",
-              "Build in automated tests, observability, secure defaults, and repeatable infrastructure from the start.",
+              "Validate schemas, missing values, duplicates, and referential integrity before data reaches reporting or reconciliation outputs.",
             ],
             [
               "03",
               "Ship, learn, refine",
-              "Use CI/CD and thoughtful code reviews to deliver reliable features and keep improving.",
+              "Plan for incremental loads, retries, pipeline monitoring, and discrepancy history. Validate releases with tests, UAT, and post-deployment checks.",
             ],
           ].map(([n, title, text]) => (
             <article data-reveal key={n}>
@@ -162,7 +193,7 @@ export default function Home() {
         </div>
         <details className="skills">
           <summary>
-            Inside my toolkit <span aria-hidden="true">＋</span>
+            Data engineering toolkit <span aria-hidden="true">＋</span>
           </summary>
           <div className="skills-grid">
             {skillGroups.map(([title, list]) => (
@@ -181,52 +212,25 @@ export default function Home() {
             The path <em>here.</em>
           </h2>
           <p>
-            Over five years building applications
-            <br />
-            and platforms that scale reliably.
+            Over six years engineering enterprise data systems across
+            telecommunications and financial services.
           </p>
         </div>
         <div className="timeline">
-          <article data-reveal>
-            <p className="eyebrow">JAN 2022 — PRESENT</p>
-            <div>
-              <h3>
-                Software Engineer <span>· Fiserv</span>
-              </h3>
-              <p className="small-label">DALLAS / FINTECH</p>
-              <p>
-                Full-stack lending features with Django REST Framework and
-                React. Secure onboarding and transaction APIs, AWS
-                infrastructure with Terraform, and automated delivery with
-                Docker and Jenkins.
-              </p>
-              <p>
-                Resume-reported outcomes: 45% lower latency, 80% shorter
-                deployment cycles, 99.99% uptime, and 30% lower MTTR with
-                DataDog and CloudWatch.
-              </p>
-            </div>
-          </article>
-          <article data-reveal>
-            <p className="eyebrow">JUN 2018 — JUL 2021</p>
-            <div>
-              <h3>
-                Software Developer <span>· Sasken Technologies</span>
-              </h3>
-              <p className="small-label">INDIA / CLOUD-NATIVE APPLICATIONS</p>
-              <p>
-                AWS applications, CI/CD with CodePipeline and CodeBuild, and
-                migration to Docker and Kubernetes on EKS. Monitoring with
-                CloudWatch and X-Ray, alongside IAM, encryption, and audit
-                logging.
-              </p>
-              <p>
-                Resume-reported outcomes: 35% lower infrastructure costs,
-                deployments from one hour to under ten minutes, 40% better fault
-                tolerance, and 50% lower MTTR.
-              </p>
-            </div>
-          </article>
+          {experience.map((job) => (
+            <article data-reveal key={job.employer}>
+              <p className="eyebrow">{job.dates}</p>
+              <div>
+                <h3>
+                  {job.title} <span>· {job.employer}</span>
+                </h3>
+                <p className="small-label">{job.location}</p>
+                {job.paragraphs.map((text) => (
+                  <p key={text}>{text}</p>
+                ))}
+              </div>
+            </article>
+          ))}
         </div>
       </section>
       <section className="wrap section about" id="about" data-reveal>
@@ -238,16 +242,25 @@ export default function Home() {
             Always a <em>learner.</em>
           </h2>
           <p>
-            I’m Hemasree Randhi, a software engineer who cares about clean code
-            and the people who use it. My work spans fintech SaaS, cloud-native
-            applications, and applied AI.
+            I’m Hemasree Randhi, a Senior AI &amp; Data Engineer based in
+            Dallas. I build cloud data platforms and distributed processing
+            pipelines for financial services and telecommunications.
           </p>
           <p>
-            I enjoy turning complex requirements into software that is clear,
-            secure, and dependable—and collaborating with product, design, and
-            DevOps teams to get there.
+            My work connects source data to decisions: reconciling records
+            across systems, validating data quality, and delivering curated
+            datasets for reporting and analysis. I work with engineering, QA,
+            finance, and business teams to make those systems maintainable and
+            dependable.
+          </p>
+          <p>
+            I’m also exploring AI-assisted data profiling and investigation.
+            That research is separate from my verified professional data
+            engineering work.
           </p>
           <p className="education">
+            Current doctoral studies in AI
+            <br />
             MS, Computer Science · University of Central Oklahoma
             <br />
             BTech, Computer Science · Andhra University, India

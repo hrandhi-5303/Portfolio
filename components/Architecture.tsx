@@ -1,26 +1,29 @@
 export default function Architecture({
   kind,
 }: {
-  kind: "reconcile" | "cloud" | "ai";
+  kind: "reconcile" | "cloud" | "ai" | "finance";
 }) {
   const nodes =
-    kind === "reconcile"
+    kind === "reconcile" || kind === "finance"
       ? [
           {
             x: 15,
             y: 35,
             w: 155,
             h: 60,
-            label: "Oracle",
-            sub: "Operational source",
+            label: kind === "finance" ? "Transactions" : "Oracle",
+            sub: kind === "finance" ? "Internal records" : "Operational source",
           },
           {
             x: 15,
             y: 175,
             w: 155,
             h: 60,
-            label: "Snowflake",
-            sub: "Analytical source",
+            label: kind === "finance" ? "Settlements" : "Snowflake",
+            sub:
+              kind === "finance"
+                ? "Clearinghouse records"
+                : "Analytical source",
           },
           {
             x: 235,
@@ -52,15 +55,15 @@ export default function Architecture({
             w: 155,
             h: 60,
             label: "Discrepancies",
-            sub: "Case management",
+            sub: kind === "finance" ? "Exception reporting" : "Case management",
           },
           {
             x: 480,
             y: 260,
             w: 165,
             h: 60,
-            label: "Delta Lake",
-            sub: "Processing history",
+            label: kind === "finance" ? "Reporting layer" : "Delta Lake",
+            sub: kind === "finance" ? "Finance + audit" : "Processing history",
           },
         ]
       : kind === "cloud"
@@ -103,7 +106,7 @@ export default function Architecture({
               w: 145,
               h: 70,
               label: "Analytical store",
-              sub: "Azure SQL / Snowflake",
+              sub: "Synapse / Azure SQL",
             },
           ]
         : [
@@ -149,7 +152,7 @@ export default function Architecture({
             },
           ];
   const paths =
-    kind === "reconcile"
+    kind === "reconcile" || kind === "finance"
       ? [
           "M170 65 H200 V120 H235",
           "M170 205 H200 V140 H235",
@@ -167,8 +170,10 @@ export default function Architecture({
             "M500 165 H550 V230 H615",
           ];
   const title =
-    kind === "reconcile"
-      ? "Reconciliation architecture"
+    kind === "reconcile" || kind === "finance"
+      ? kind === "finance"
+        ? "Financial settlement reconciliation"
+        : "Reconciliation architecture"
       : kind === "cloud"
         ? "Cloud data pipeline"
         : "Proposed AI investigation workflow";
@@ -246,8 +251,10 @@ export default function Architecture({
         </svg>
       </div>
       <figcaption>
-        {kind === "reconcile"
-          ? "Oracle and Snowflake → ingestion and Databricks transformation → reconciliation rules → matching or discrepancies → case management and Delta Lake tracking."
+        {kind === "reconcile" || kind === "finance"
+          ? kind === "finance"
+            ? "Internal transactions and clearinghouse settlements → normalization and reconciliation → validated records or exceptions → finance and audit reporting. Simplified view of the workflow."
+            : "Oracle and Snowflake → ingestion and Databricks transformation → reconciliation rules → matching or discrepancies → case management and Delta Lake tracking."
           : kind === "cloud"
             ? "Data sources → Azure Data Factory → Azure Databricks → Delta Lake → analytical data store. Simplified view of the processing stages."
             : "Proposed concept: data sources and approved context → AI agent → validation checks and investigation results. No production deployment is claimed."}

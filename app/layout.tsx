@@ -2,9 +2,9 @@ import "./globals.css";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 export const metadata = {
-  title: "Hemasree Randhi — Software Engineer",
+  title: "Hemasree Randhi — Senior AI & Data Engineer",
   description:
-    "Thoughtful engineering for reliable software. Full-stack applications, cloud platforms, and AI by Hemasree Randhi.",
+    "Senior AI & Data Engineer building Azure data platforms, distributed PySpark pipelines, telecom and financial reconciliation systems, and AI-ready data solutions.",
 };
 export const viewport = { width: "device-width", initialScale: 1 };
 export default function RootLayout({

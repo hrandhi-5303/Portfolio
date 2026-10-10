@@ -858,3 +858,22 @@ p {
     font-size: 11px;
   }
 }
+/* Longer data-engineering headline retains the editorial composition. */
+.hero h1.data-headline {
+  font-size: clamp(42px, 4vw, 57px);
+  line-height: 1.12;
+}
+.earlier-projects .section-heading h2 {
+  font-size: clamp(30px, 3.2vw, 42px);
+}
+.earlier-projects .other-grid h3 {
+  font-size: 21px;
+}
+.earlier-projects .other-grid p {
+  font-size: 13px;
+}
+@media (max-width: 600px) {
+  .hero h1.data-headline {
+    font-size: 42px;
+  }
+}

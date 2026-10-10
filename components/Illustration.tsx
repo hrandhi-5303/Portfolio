@@ -71,7 +71,7 @@ export function Developer() {
 export function Sketch({
   kind = "cloud",
 }: {
-  kind?: "cloud" | "reconcile" | "ai" | "flower" | "mail";
+  kind?: "cloud" | "reconcile" | "finance" | "ai" | "flower" | "mail";
 }) {
   return (
     <svg
@@ -86,7 +86,7 @@ export function Sketch({
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        {kind === "reconcile" ? (
+        {kind === "reconcile" || kind === "finance" ? (
           <>
             <path d="M27 30 L103 27 L108 131 L29 135Z M176 31 L251 34 L247 138 L175 133Z M45 54 L85 54 M45 70 L90 68 M46 86 L77 86 M194 57 L229 57 M191 75 L230 76 M192 93 L222 93 M113 66 Q141 40 166 65 M155 53 L167 66 L154 71 M165 111 Q140 137 115 109 M125 104 L114 108 L121 121" />
             <path d="M46 110 L53 117 L68 100 M195 112 L201 119 L216 104" />
