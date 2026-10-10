@@ -1,18 +1,18 @@
 export const professionalStudies = [
   {
     slug: "reconciliation-engine",
-    title: "Enterprise Data Reconciliation Engine",
-    fullTitle: "Enterprise Data Reconciliation Engine",
+    title: "Enterprise Telecom Reconciliation Engine",
+    fullTitle: "Enterprise Telecom Reconciliation Engine",
     category: "01 / TELECOMMUNICATIONS",
     kind: "reconcile" as const,
-    status: "Professional work · Global Logic (client: T-Mobile)",
+    status: "GlobalLogic · Client: T-Mobile",
     role: "Senior Data Engineer",
     summary:
       "Cross-system validation of billing, subscriber, cancellation, and return-order data, with a traceable discrepancy lifecycle.",
     intro:
       "An Azure-based telecom reconciliation solution comparing operational and analytical data from Oracle and Snowflake. The system identifies mismatches and manages discrepancy cases through Delta Lake.",
     context:
-      "As a Senior Data Engineer at Global Logic, working with client T-Mobile from June 2026, I built ingestion, transformation, reconciliation, and case-processing workflows. I collaborated with data engineers, technical leads, and business teams on requirements, validation, UAT, and releases.",
+      "As a Senior Data Engineer at GlobalLogic, working with client T-Mobile from June 2026, I built ingestion, transformation, reconciliation, and case-processing workflows. I collaborated with data engineers, technical leads, and business teams on requirements, validation, UAT, and releases.",
     challenge:
       "Source records differed in format, completeness, and order classification. Missing subscriber identifiers required fallback matching, and date comparisons needed consistent treatment. Recurring mismatches had to update existing cases without creating duplicates, while resolved discrepancies needed to close with a retained processing history.",
     approach: [
@@ -38,90 +38,37 @@ export const professionalStudies = [
       ],
     ],
     stack: [
-      "Python",
-      "PySpark",
-      "Spark SQL",
-      "Azure Databricks",
       "Azure Data Factory",
+      "Azure Databricks",
+      "PySpark",
+      "Apache Spark",
+      "Spark SQL",
+      "Python",
+      "SQL",
       "ADLS Gen2",
       "Snowflake",
       "Oracle",
       "Delta Lake",
-      "GitLab CI/CD",
+      "GitLab",
     ],
     outcome:
       "Delivered automated cross-system validation and discrepancy detection with case creation, updates, resolution, and processing history. Reusable notebooks and validation controls made the workflow easier to maintain and extend.",
     lesson:
       "A reconciliation result needs a history: what was compared, what failed, and whether the discrepancy remains open.",
-  },
-  {
-    slug: "cloud-data-platform",
-    title: "Cloud Data Engineering Platform",
-    fullTitle: "Cloud Data Engineering Platform",
-    category: "02 / CLOUD DATA ENGINEERING",
-    kind: "cloud" as const,
-    status: "Professional work · Fiserv",
-    role: "Data Engineer",
-    summary:
-      "Azure ingestion and distributed transformation pipelines delivering validated financial datasets to analytical serving layers.",
-    intro:
-      "A cloud data engineering platform supporting batch and near real-time ingestion, distributed transformations, data-quality controls, and analytics-ready delivery for financial services.",
-    context:
-      "At Fiserv, from June 2023 to May 2026, I designed and developed Azure pipelines for financial data from settlement systems, merchant portals, and clearinghouses. I partnered with finance teams, analysts, and business stakeholders on source-to-target mappings, curated models, and reporting requirements.",
-    challenge:
-      "Relational sources, APIs, and flat files produced structured and semi-structured data with different schemas and arrival patterns. Downstream reporting depended on consistent transaction records, recoverable pipeline execution, and validation before data reached serving layers.",
-    approach: [
-      [
-        "01",
-        "Separate ingestion from transformation",
-        "Built batch and near real-time ingestion frameworks with Azure Data Factory and ADLS Gen2. Databricks workflows used PySpark and Spark SQL to standardize transactions, normalize timestamps, and apply curated transformations.",
-      ],
-      [
-        "02",
-        "Validate before publishing",
-        "Implemented schema validation, null checks, duplicate detection, referential-integrity checks, and reconciliation controls. Delta Lake supported the processing layer, with curated datasets served through Azure Synapse Analytics and Azure SQL Database.",
-      ],
-      [
-        "03",
-        "Tune the distributed workload",
-        "Used partition pruning, caching, data partitioning, and query tuning to optimize large joins and aggregations. The engineering focus was reliable financial data delivery rather than an unverified performance target.",
-      ],
-      [
-        "04",
-        "Make operations part of the design",
-        "Automated dependencies, retries, and SLA-based execution in Azure Data Factory. Azure Monitor, operational logs, and ETL health checks helped detect failed pipelines, delayed feeds, reconciliation breaks, and anomalies.",
-      ],
-    ],
-    stack: [
-      "Azure Data Factory",
-      "ADLS Gen2",
-      "Azure Databricks",
-      "Python",
-      "SQL",
-      "PySpark",
-      "Spark SQL",
-      "Delta Lake",
-      "Azure Synapse Analytics",
-      "Azure SQL Database",
-      "Azure Monitor",
-    ],
-    outcome:
-      "Delivered curated reporting datasets and analytical serving layers for transaction reporting, settlement summaries, fee analysis, and finance dashboards. Validation, orchestration, and monitoring supported more consistent processing and operational control.",
-    lesson:
-      "Reliable data delivery depends on the whole path: ingestion, transformation, validation, orchestration, and the serving layer.",
+    period: "June 2026 – Present",
   },
   {
     slug: "financial-data-reconciliation",
-    title: "Financial Data Reconciliation",
-    fullTitle: "Financial Data Reconciliation",
-    category: "03 / FINANCIAL SERVICES",
+    title: "Financial Data Engineering & Settlement Reconciliation",
+    fullTitle: "Financial Data Engineering & Settlement Reconciliation",
+    category: "02 / FINANCIAL SERVICES",
     kind: "finance" as const,
-    status: "Professional work · Fiserv",
+    status: "Fiserv",
     role: "Data Engineer",
     summary:
       "Transaction-to-settlement validation and automated exception reporting for finance and audit workflows.",
     intro:
-      "Reconciliation pipelines comparing internal financial transactions with clearinghouse settlement records, identifying mismatches and producing exception reports for investigation.",
+      "Designed and developed scalable Azure data pipelines for financial transactions, settlement records, merchant data, and clearinghouse information. Ingestion, distributed transformation, reconciliation, and validation delivered curated datasets for finance reporting and analytics.",
     context:
       "This work was part of my Data Engineer role at Fiserv, June 2023–May 2026. I translated settlement, reporting, and audit requirements into Azure-based pipelines, source-to-target mappings, and curated financial data models with finance and business teams.",
     challenge:
@@ -130,7 +77,7 @@ export const professionalStudies = [
       [
         "01",
         "Prepare comparable financial records",
-        "Used Python, PySpark, Spark SQL, and distributed transformation workflows to standardize transactions, perform currency conversions, normalize timestamps, and map merchant categories.",
+        "Built batch and near real-time ingestion from relational systems, APIs, and flat files with Azure Data Factory and ADLS Gen2. PySpark and Spark SQL transformations standardized financial records, currencies, timestamps, and merchant categories.",
       ],
       [
         "02",
@@ -144,27 +91,93 @@ export const professionalStudies = [
       ],
       [
         "04",
+        "Deliver and optimize analytical datasets",
+        "Built curated datasets in Azure Synapse Analytics and Azure SQL Database for settlement analysis, finance reporting, and audits. Optimized joins, aggregations, partitioning, and caching in Spark workloads.",
+      ],
+      [
+        "05",
         "Monitor the reconciliation path",
         "Used Azure Data Factory orchestration, retries, operational logs, Azure Monitor, and ETL health checks to surface failures, delayed feeds, and reconciliation breaks.",
       ],
     ],
     stack: [
-      "Python",
-      "SQL",
-      "PySpark",
-      "Spark SQL",
       "Azure Data Factory",
       "Azure Databricks",
       "ADLS Gen2",
-      "Delta Lake",
       "Azure Synapse Analytics",
       "Azure SQL Database",
+      "PySpark",
+      "Spark SQL",
+      "Python",
+      "SQL",
+      "Delta Lake",
       "Azure Monitor",
     ],
     outcome:
       "Automated transaction-to-settlement comparison and exception reporting, replacing manual spreadsheet-based audit workflows. Curated datasets supported finance operations, settlement reporting, and investigation of reconciliation breaks.",
     lesson:
       "A financial discrepancy is useful only when its supporting records and reporting context are clear enough to investigate.",
+    period: "June 2023 – May 2026",
+  },
+  {
+    slug: "telecom-data-analytics",
+    title: "Enterprise Telecom Data Processing & Analytics",
+    fullTitle: "Enterprise Telecom Data Processing & Analytics",
+    period: "June 2018 – July 2021",
+    category: "03 / TELECOMMUNICATIONS",
+    kind: "telecom" as const,
+    status: "Sasken Technologies",
+    role: "Junior Data Engineer",
+    summary:
+      "ETL/ELT pipelines turning network, subscriber, billing, and operational datasets into validated reporting data.",
+    intro:
+      "Developed and maintained enterprise data pipelines for telecommunications network, subscriber, billing, and operational datasets. PySpark transformations and quality controls prepared curated data for reporting and analytics.",
+    context:
+      "As Junior Data Engineer at Sasken Technologies from June 2018 to July 2021, I developed ETL/ELT workflows and worked with analysts, reporting teams, and business stakeholders on mappings, processing rules, and reporting datasets.",
+    challenge:
+      "API, FTP, and enterprise sources arrived as CSV, JSON, and Parquet. Nested operational logs and timestamps across regions required standardization. Malformed records, missing values, and billing inconsistencies needed to be detected before affecting downstream reporting.",
+    approach: [
+      [
+        "01",
+        "Ingest diverse source formats",
+        "Built Azure Data Factory ingestion workflows for APIs, FTP sources, and enterprise datasets into Azure Data Lake Storage and big data environments. Used source-to-target mappings and profiling to define consistent data flows.",
+      ],
+      [
+        "02",
+        "Transform operational data",
+        "Developed PySpark and Spark SQL processing to parse and flatten nested JSON, normalize timestamps, and perform joins, aggregations, and filtering across subscriber usage, billing, and operational data.",
+      ],
+      [
+        "03",
+        "Validate and reconcile",
+        "Applied schema enforcement, datatype checks, null validation, duplicate detection, and record-level filtering. Quality-control and reconciliation frameworks identified usage anomalies, billing inconsistencies, and invalid records.",
+      ],
+      [
+        "04",
+        "Prepare reporting datasets",
+        "Supported curated data for network usage, billing behavior, fraud indicators, churn-related metrics, and executive KPI reporting. Worked with analysts to align transformations with reporting requirements.",
+      ],
+      [
+        "05",
+        "Optimize and operate",
+        "Used broadcast joins, caching, and partition pruning to tune Spark workloads. Supported orchestration, retries, dependencies, monitoring, logging, alerting, production troubleshooting, and controlled data access.",
+      ],
+    ],
+    stack: [
+      "Azure Data Factory",
+      "Azure Data Lake Storage",
+      "PySpark",
+      "Spark SQL",
+      "SQL",
+      "Hive",
+      "Hadoop",
+      "Python",
+      "Azure Monitor",
+    ],
+    outcome:
+      "Delivered standardized, validated datasets for telecommunications analytics and reporting. Reconciliation controls supported data trust, while workload tuning, orchestration, and monitoring improved maintainability and operational reliability.",
+    lesson:
+      "Operational reporting starts with consistent source data. Validation and traceable transformations make curated datasets easier to trust.",
   },
 ];
 export const researchStudy = {
@@ -220,49 +233,51 @@ export const researchStudy = {
 };
 export const studies = [...professionalStudies, researchStudy];
 export const skillGroups = [
-  ["Core languages", "Python, SQL, PySpark, Spark SQL, Bash, shell scripting"],
+  ["Programming", "Python, SQL, Spark SQL, Bash, Shell Scripting"],
   [
-    "Azure data platform",
-    "Azure Data Factory, Azure Databricks, ADLS Gen2, Azure Synapse Analytics, Azure SQL Database, Azure Monitor",
+    "Big Data & Distributed Processing",
+    "PySpark, Apache Spark, Azure Databricks, Delta Lake, Hive, Hadoop",
   ],
   [
-    "Databases & distributed processing",
-    "Snowflake, Oracle, Apache Spark, Delta Lake, Hive, Hadoop",
+    "Azure Data Platform",
+    "Azure Data Factory, ADLS Gen2, Azure Synapse Analytics, Azure SQL Database, Azure Monitor, Azure Storage",
+  ],
+  ["Enterprise Databases", "Snowflake, Oracle"],
+  [
+    "Data Engineering",
+    "ETL/ELT, Data Ingestion, Data Transformation, Incremental Loads, CDC, Merge, Upsert, Workflow Orchestration, Metadata-Driven Ingestion",
   ],
   [
-    "Pipelines & data modeling",
-    "ETL/ELT, batch and near real-time processing, incremental loads, CDC, merge/upsert logic, pipeline orchestration, dimensional modeling, curated data layers",
+    "Data Warehousing & Analytics",
+    "Data Warehousing, Dimensional Modeling, Curated Data Layers, Data Marts, Advanced SQL, KPI Reporting",
   ],
   [
-    "Reconciliation & quality",
-    "Cross-system reconciliation, settlement validation, data profiling, schema checks, null and duplicate detection, referential integrity, source-to-target validation, exception reporting",
+    "Data Quality & Governance",
+    "Schema Validation, Data Profiling, Source-to-Target Mapping, Duplicate Detection, Referential Integrity, Reconciliation, Audit Logging",
   ],
   [
-    "Delivery & operations",
-    "Git, GitLab CI/CD, testing, UAT, pipeline monitoring, Azure Monitor, ETL health checks, incident response, Terraform, Docker, Jenkins",
+    "Performance Engineering",
+    "Partition Pruning, Caching, Broadcast Joins, Spark Optimization, SQL Query Tuning",
   ],
   [
-    "Performance & reporting",
-    "Partition pruning, broadcast joins, caching, Spark and SQL tuning, Power BI, Tableau",
+    "DevOps & Monitoring",
+    "Git, GitLab CI/CD, Terraform, Docker, Jenkins, Linux, Azure Monitor",
   ],
-  [
-    "AI research / exploration",
-    "LLMs, RAG, LangGraph, AI-assisted profiling, anomaly detection, discrepancy investigation; proposed prototype work",
-  ],
+  ["Reporting", "Power BI, Tableau, Grafana"],
 ];
 export const experience = [
   {
-    dates: "JUN 2026 — PRESENT",
+    dates: "June 2026 – Present",
     title: "Senior Data Engineer",
-    employer: "Global Logic",
-    location: "DALLAS · CLIENT: T-MOBILE · TELECOMMUNICATIONS",
+    employer: "GlobalLogic (Client: T-Mobile)",
+    location: "DALLAS · TELECOMMUNICATIONS",
     paragraphs: [
       "Built Azure Data Factory and Databricks pipelines to reconcile billing, subscriber, cancellation, and return-order data from Snowflake and Oracle. Developed PySpark and Spark SQL matching rules, fallback handling, and Delta Lake discrepancy case management.",
       "Created reusable notebooks and validation controls, supported UAT with engineering and business teams, and delivered GitLab CI/CD releases with post-deployment validation.",
     ],
   },
   {
-    dates: "JUN 2023 — MAY 2026",
+    dates: "June 2023 – May 2026",
     title: "Data Engineer",
     employer: "Fiserv",
     location: "DALLAS · FINANCIAL SERVICES",
@@ -272,7 +287,7 @@ export const experience = [
     ],
   },
   {
-    dates: "JUN 2018 — JUL 2021",
+    dates: "June 2018 – July 2021",
     title: "Junior Data Engineer",
     employer: "Sasken Technologies",
     location: "INDIA · NETWORK, BILLING & OPERATIONAL DATA",

@@ -1,182 +1,119 @@
-export default function Architecture({
-  kind,
-}: {
-  kind: "reconcile" | "cloud" | "ai" | "finance";
-}) {
-  const nodes =
-    kind === "reconcile" || kind === "finance"
+type Kind = "reconcile" | "finance" | "telecom" | "ai";
+export default function Architecture({ kind }: { kind: Kind }) {
+  const labels: Record<Kind, string[][]> = {
+    reconcile: [
+      ["Oracle", "Operational source"],
+      ["Snowflake", "Analytical source"],
+      ["Azure Databricks", "ADF ingestion + transformation"],
+      ["PySpark rules", "Spark SQL reconciliation"],
+      ["Discrepancy detection", "Cross-system comparisons"],
+      ["Delta Lake", "Create / update / close cases"],
+    ],
+    finance: [
+      ["Financial sources", "Transactions + settlements"],
+      ["Azure Data Factory", "Batch + near real-time ingestion"],
+      ["ADLS Gen2", "Raw financial datasets"],
+      ["Databricks / PySpark", "Distributed transformations"],
+      ["Reconcile + validate", "Quality controls + exceptions"],
+      ["Synapse / Azure SQL", "Curated serving layers"],
+      ["Reporting + analytics", "Finance, settlements + audit"],
+    ],
+    telecom: [
+      ["Telecom sources", "Network, subscriber + billing"],
+      ["Ingestion", "ADF / APIs / FTP"],
+      ["Data Lake", "CSV / JSON / Parquet"],
+      ["PySpark / Spark SQL", "Transform + standardize"],
+      ["Quality validation", "Schema + reconciliation checks"],
+      ["Curated data", "Validated reporting datasets"],
+      ["Business analytics", "Usage, billing + KPI reporting"],
+    ],
+    ai: [
+      ["Data sources", "Scoped datasets"],
+      ["Approved context", "Documentation for retrieval"],
+      ["AI agent", "Proposed RAG workflow"],
+      ["Validation checks", "Profile + investigate anomalies"],
+      ["Investigation results", "Evidence + human review"],
+    ],
+  };
+  const reconcilePositions = [
+    [45, 20],
+    [655, 20],
+    [350, 130],
+    [350, 240],
+    [45, 350],
+    [655, 350],
+  ];
+  const pipelinePositions = [
+    [15, 40],
+    [240, 40],
+    [465, 40],
+    [690, 40],
+    [690, 230],
+    [465, 230],
+    [240, 230],
+  ];
+  const aiPositions = [
+    [45, 20],
+    [655, 20],
+    [350, 145],
+    [45, 290],
+    [655, 290],
+  ];
+  const positions =
+    kind === "reconcile"
+      ? reconcilePositions
+      : kind === "ai"
+        ? aiPositions
+        : pipelinePositions;
+  const nodes = labels[kind].map(([label, sub], i) => ({
+    label,
+    sub,
+    x: positions[i][0],
+    y: positions[i][1],
+    w: 190,
+    h: 70,
+  }));
+  const paths =
+    kind === "reconcile"
       ? [
-          {
-            x: 15,
-            y: 35,
-            w: 155,
-            h: 60,
-            label: kind === "finance" ? "Transactions" : "Oracle",
-            sub: kind === "finance" ? "Internal records" : "Operational source",
-          },
-          {
-            x: 15,
-            y: 175,
-            w: 155,
-            h: 60,
-            label: kind === "finance" ? "Settlements" : "Snowflake",
-            sub:
-              kind === "finance"
-                ? "Clearinghouse records"
-                : "Analytical source",
-          },
-          {
-            x: 235,
-            y: 95,
-            w: 180,
-            h: 70,
-            label: "Databricks",
-            sub: "Ingest + transform",
-          },
-          {
-            x: 480,
-            y: 95,
-            w: 165,
-            h: 70,
-            label: "Reconciliation",
-            sub: "Business rules",
-          },
-          {
-            x: 710,
-            y: 30,
-            w: 155,
-            h: 60,
-            label: "Matching",
-            sub: "Consistent records",
-          },
-          {
-            x: 710,
-            y: 170,
-            w: 155,
-            h: 60,
-            label: "Discrepancies",
-            sub: kind === "finance" ? "Exception reporting" : "Case management",
-          },
-          {
-            x: 480,
-            y: 260,
-            w: 165,
-            h: 60,
-            label: kind === "finance" ? "Reporting layer" : "Delta Lake",
-            sub: kind === "finance" ? "Finance + audit" : "Processing history",
-          },
+          "M235 55 H290 V165 H350",
+          "M655 55 H600 V165 H540",
+          "M445 200 V240",
+          "M350 275 H140 V350",
+          "M235 385 H655",
         ]
-      : kind === "cloud"
+      : kind === "ai"
         ? [
-            {
-              x: 15,
-              y: 95,
-              w: 135,
-              h: 70,
-              label: "Data sources",
-              sub: "Enterprise datasets",
-            },
-            {
-              x: 195,
-              y: 95,
-              w: 135,
-              h: 70,
-              label: "Data Factory",
-              sub: "Ingestion",
-            },
-            {
-              x: 375,
-              y: 95,
-              w: 135,
-              h: 70,
-              label: "Databricks",
-              sub: "Transform + validate",
-            },
-            {
-              x: 555,
-              y: 95,
-              w: 135,
-              h: 70,
-              label: "Delta Lake",
-              sub: "Track + process",
-            },
-            {
-              x: 735,
-              y: 95,
-              w: 145,
-              h: 70,
-              label: "Analytical store",
-              sub: "Synapse / Azure SQL",
-            },
+            "M235 55 H290 V180 H350",
+            "M655 55 H600 V180 H540",
+            "M350 180 H140 V290",
+            "M540 180 H750 V290",
           ]
         : [
-            {
-              x: 15,
-              y: 45,
-              w: 180,
-              h: 70,
-              label: "Data sources",
-              sub: "Scoped datasets",
-            },
-            {
-              x: 15,
-              y: 195,
-              w: 180,
-              h: 70,
-              label: "Context",
-              sub: "Approved documents",
-            },
-            {
-              x: 310,
-              y: 110,
-              w: 190,
-              h: 80,
-              label: "AI agent",
-              sub: "Proposed RAG workflow",
-            },
-            {
-              x: 615,
-              y: 40,
-              w: 240,
-              h: 70,
-              label: "Validation checks",
-              sub: "Profile + detect anomalies",
-            },
-            {
-              x: 615,
-              y: 195,
-              w: 240,
-              h: 70,
-              label: "Investigation results",
-              sub: "Evidence + human review",
-            },
-          ];
-  const paths =
-    kind === "reconcile" || kind === "finance"
-      ? [
-          "M170 65 H200 V120 H235",
-          "M170 205 H200 V140 H235",
-          "M415 130 H480",
-          "M645 120 H680 V60 H710",
-          "M645 145 H680 V200 H710",
-          "M788 230 V290 H645",
-        ]
-      : kind === "cloud"
-        ? ["M150 130 H195", "M330 130 H375", "M510 130 H555", "M690 130 H735"]
-        : [
-            "M195 80 H250 V135 H310",
-            "M195 230 H250 V165 H310",
-            "M500 135 H550 V75 H615",
-            "M500 165 H550 V230 H615",
+            "M205 75 H240",
+            "M430 75 H465",
+            "M655 75 H690",
+            "M785 110 V230",
+            "M690 265 H655",
+            "M465 265 H430",
           ];
   const title =
-    kind === "reconcile" || kind === "finance"
-      ? kind === "finance"
-        ? "Financial settlement reconciliation"
-        : "Reconciliation architecture"
-      : kind === "cloud"
-        ? "Cloud data pipeline"
-        : "Proposed AI investigation workflow";
+    kind === "reconcile"
+      ? "Enterprise telecom reconciliation architecture"
+      : kind === "finance"
+        ? "Financial data engineering and settlement architecture"
+        : kind === "telecom"
+          ? "Telecom data processing and analytics architecture"
+          : "Proposed AI investigation workflow";
+  const captions: Record<Kind, string> = {
+    reconcile:
+      "Oracle and Snowflake → Azure Databricks → PySpark reconciliation rules → discrepancy detection → Delta Lake case tracking. Azure Data Factory orchestrates ingestion. Simplified public architecture.",
+    finance:
+      "Financial sources → Azure Data Factory → ADLS Gen2 → Databricks / PySpark → reconciliation and validation → Azure Synapse / Azure SQL → reporting and analytics.",
+    telecom:
+      "Telecom sources → ingestion → data lake → PySpark / Spark SQL → quality validation → curated data → business analytics.",
+    ai: "Proposed research concept: scoped data and approved context → AI agent → validation checks and investigation results. No production implementation is claimed.",
+  };
   return (
     <figure className="architecture">
       <div
@@ -185,7 +122,7 @@ export default function Architecture({
         role="region"
         aria-label={`${title}, horizontally scrollable on small screens`}
       >
-        <svg viewBox="0 0 900 350" role="img" aria-label={title}>
+        <svg viewBox="0 0 900 450" role="img" aria-label={title}>
           <title>{title}</title>
           <defs>
             <marker
@@ -250,15 +187,7 @@ export default function Architecture({
           ))}
         </svg>
       </div>
-      <figcaption>
-        {kind === "reconcile" || kind === "finance"
-          ? kind === "finance"
-            ? "Internal transactions and clearinghouse settlements → normalization and reconciliation → validated records or exceptions → finance and audit reporting. Simplified view of the workflow."
-            : "Oracle and Snowflake → ingestion and Databricks transformation → reconciliation rules → matching or discrepancies → case management and Delta Lake tracking."
-          : kind === "cloud"
-            ? "Data sources → Azure Data Factory → Azure Databricks → Delta Lake → analytical data store. Simplified view of the processing stages."
-            : "Proposed concept: data sources and approved context → AI agent → validation checks and investigation results. No production deployment is claimed."}
-      </figcaption>
+      <figcaption>{captions[kind]}</figcaption>
     </figure>
   );
 }

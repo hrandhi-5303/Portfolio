@@ -7,7 +7,7 @@ export function Developer() {
       aria-labelledby="developer-title"
     >
       <title id="developer-title">
-        Hand-drawn female developer waving hello at her desk
+        Hand-drawn female data engineer waving hello beside a data pipeline
       </title>
       <g
         fill="none"
@@ -43,7 +43,7 @@ export function Developer() {
         </g>
         <path d="M119 287 Q126 278 143 283 L170 297 M270 284 Q292 276 311 298" />
         <path d="M144 282 L310 284 L290 346 L166 343Z" fill="#f8f5ed" />
-        <path d="M156 349 L310 350 M219 312 L214 317 L219 322 M238 313 L243 318 L238 323 M229 310 L224 327" />
+        <path d="M156 349 L310 350 M185 307 Q194 301 203 307 Q194 313 185 307 V326 Q194 332 203 326 V307 M203 317 L219 317 M219 310 L235 310 L235 324 L219 324Z M235 317 L254 317 M254 310 L270 310 L270 324 L254 324Z" />
         <path d="M336 316 L363 316 L360 346 L341 346Z M363 320 Q383 319 372 335 L362 337 M343 302 Q337 291 345 283 M355 302 Q361 292 356 285" />
         <path d="M47 276 Q20 249 27 225 Q52 227 57 275 M57 274 Q67 237 86 236 Q89 263 57 284 M42 299 L70 299 L67 346 L47 346Z M56 299 L55 267" />
         <g className="hi-bubble">
@@ -71,7 +71,14 @@ export function Developer() {
 export function Sketch({
   kind = "cloud",
 }: {
-  kind?: "cloud" | "reconcile" | "finance" | "ai" | "flower" | "mail";
+  kind?:
+    | "cloud"
+    | "reconcile"
+    | "finance"
+    | "telecom"
+    | "ai"
+    | "flower"
+    | "mail";
 }) {
   return (
     <svg
@@ -113,6 +120,36 @@ export function Sketch({
           </>
         )}
       </g>
+    </svg>
+  );
+}
+export function EngineeringSketch({ stage }: { stage: string }) {
+  const drawings: Record<string, string> = {
+    sources:
+      "M28 40 Q52 21 76 40 Q52 57 28 40 M28 40 V90 Q52 109 76 90 V40 M28 65 Q52 84 76 65 M94 40 L145 39 L149 104 L97 105Z M109 56 L134 56 M109 73 L136 72 M81 73 L94 73",
+    pipeline:
+      "M15 40 L53 39 L53 80 L15 81Z M72 40 L110 39 L110 80 L72 81Z M129 40 L167 39 L167 80 L129 81Z M53 60 L72 60 M110 60 L129 60 M30 54 L40 66 L30 73 M85 55 L96 55 M84 66 L97 66 M142 56 L151 65 L142 74",
+    validation:
+      "M30 28 L130 26 L134 113 L33 116Z M49 47 L112 47 M49 70 L56 78 L70 61 M80 70 L113 70 M50 95 L57 102 L71 84 M82 94 L113 94",
+    processing:
+      "M64 26 L120 26 L122 81 L65 82Z M74 26 V17 L131 17 L133 71 M88 48 L101 48 M89 58 L102 58 M45 92 L80 91 L80 114 L45 115Z M109 92 L146 93 L146 116 L109 115Z M93 82 V88 M64 91 V87 L127 87 L127 92",
+    monitor:
+      "M24 30 L150 28 L153 101 L26 103Z M36 82 L58 81 L70 59 L85 90 L103 46 L117 78 L140 77 M69 116 L112 116 M90 103 V115",
+  };
+  return (
+    <svg
+      className="engineering-sketch"
+      viewBox="0 0 180 140"
+      aria-hidden="true"
+    >
+      <path
+        d={drawings[stage] || drawings.pipeline}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }

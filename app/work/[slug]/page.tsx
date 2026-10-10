@@ -10,6 +10,11 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   const study = studies.find((s) => s.slug === params.slug);
   return {
     description: study?.summary,
+    openGraph: {
+      title: study?.fullTitle,
+      description: study?.summary,
+      type: "article",
+    },
     title: study ? `${study.title} — Hemasree Randhi` : "Case study not found",
   };
 }
@@ -32,6 +37,7 @@ export default function CaseStudy({ params }: { params: { slug: string } }) {
           <p className="intro">{study.intro}</p>
           <span className="project-status">
             {study.status} · {study.role}
+            {"period" in study ? ` · ${study.period}` : ""}
           </span>
         </div>
         <Sketch kind={study.kind} />

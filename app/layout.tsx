@@ -1,10 +1,15 @@
 import "./globals.css";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
+const title = "Hemasree Randhi — Senior Data Engineer";
+const description =
+  "Senior Data Engineer with 6+ years building Azure data platforms, distributed PySpark pipelines, telecom and financial reconciliation frameworks, and analytics-ready datasets.";
 export const metadata = {
-  title: "Hemasree Randhi — Senior AI & Data Engineer",
+  openGraph: { title, description, type: "website" },
+  twitter: { card: "summary", title, description },
+  title: "Hemasree Randhi — Senior Data Engineer",
   description:
-    "Senior AI & Data Engineer building Azure data platforms, distributed PySpark pipelines, telecom and financial reconciliation systems, and AI-ready data solutions.",
+    "Senior Data Engineer building Azure data platforms, distributed PySpark pipelines, telecom and financial reconciliation systems, and analytics-ready datasets.",
 };
 export const viewport = { width: "device-width", initialScale: 1 };
 export default function RootLayout({
@@ -24,7 +29,8 @@ export default function RootLayout({
           </Link>
           <nav aria-label="Main navigation">
             <Link href="/#work">Work</Link>
-            <Link href="/#engineering">Process</Link>
+            <Link href="/#engineering">Engineering</Link>
+            <Link href="/#skills">Skills</Link>
             <Link href="/#about">About</Link>
             <Link href="/#contact">
               Contact <span aria-hidden="true">↗</span>
@@ -34,13 +40,14 @@ export default function RootLayout({
         <main id="main">{children}</main>
         <footer className="site-footer">
           <span>© {new Date().getFullYear()} Hemasree Randhi</span>
-          <span>Made with care, and a little curiosity.</span>
+          <span>Senior Data Engineer · Azure / PySpark / SQL</span>
           <a
             href="/Hemasree_Resume.pdf"
+            download
             target="_blank"
             rel="noopener noreferrer"
           >
-            Resume (PDF) ↗
+            Download Resume (PDF) ↓
           </a>
         </footer>
         <ScrollReveal />

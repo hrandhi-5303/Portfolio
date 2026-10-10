@@ -877,3 +877,63 @@ p {
     font-size: 42px;
   }
 }
+.eyebrow,
+.small-label {
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+.hero-intro {
+  font-family: Georgia, serif;
+  font-size: 23px;
+  margin: 20px 0 15px;
+  color: var(--ink);
+}
+.hero .hero-note {
+  max-width: 530px;
+  line-height: 1.8;
+}
+.engineering-sketch {
+  display: block;
+  width: 120px;
+  height: 95px;
+  margin-bottom: 15px;
+}
+.skills {
+  padding: 28px 0;
+}
+.skills > h3 {
+  font-size: 25px;
+}
+.skills .primary-skills {
+  margin-bottom: 30px;
+}
+.skills .primary-skills span {
+  font-size: 14px;
+  border-color: var(--ink);
+}
+.skills-grid details {
+  border-top: 1px solid var(--line);
+}
+.skills-grid summary {
+  font-size: 13px;
+  gap: 15px;
+  min-height: 72px;
+}
+.skills-grid details p {
+  padding-bottom: 20px;
+}
+@media (min-width: 801px) {
+  .principles {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 45px;
+  }
+}
+@media (max-width: 600px) {
+  .site-header nav {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .hero-bottom {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}

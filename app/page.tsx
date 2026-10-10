@@ -1,6 +1,10 @@
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
-import { Developer, Sketch } from "@/components/Illustration";
+import {
+  Developer,
+  Sketch,
+  EngineeringSketch,
+} from "@/components/Illustration";
 import {
   professionalStudies,
   researchStudy,
@@ -12,18 +16,20 @@ export default function Home() {
     <>
       <section className="hero wrap" id="home">
         <div className="hero-copy">
-          <p className="eyebrow">HEMASREE RANDHI · SENIOR AI & DATA ENGINEER</p>
+          <p className="eyebrow">HEMASREE RANDHI · SENIOR DATA ENGINEER</p>
           <h1 className="data-headline">
-            I build reliable data systems and turn complex data into{" "}
-            <em>intelligence.</em>
+            I engineer data systems that power <em>real-world decisions.</em>
           </h1>
+          <p className="hero-intro">Hi, I’m Hemasree.</p>
           <p className="intro">
-            I design and engineer scalable data platforms, distributed
-            processing pipelines, reconciliation systems, and AI-ready solutions
-            across financial services and telecommunications.
+            I’m a Senior Data Engineer with 6+ years of experience building
+            scalable cloud data platforms, distributed data pipelines,
+            reconciliation frameworks, and analytics-ready solutions across
+            telecommunications and financial services.
           </p>
           <p className="hero-note">
-            Validation at the boundaries. Traceability through the pipeline.
+            My expertise includes Azure Data Factory, Azure Databricks, PySpark,
+            Spark SQL, Snowflake, Oracle, and Delta Lake.
           </p>
           <div className="hero-links">
             <a className="button" href="#work">
@@ -32,16 +38,19 @@ export default function Home() {
             <a
               className="text-link"
               href="/Hemasree_Resume.pdf"
+              download
               target="_blank"
               rel="noopener noreferrer"
             >
-              View resume ↗
+              Download Resume ↓
             </a>
           </div>
         </div>
         <div className="hero-art">
           <Developer />
-          <span className="handwritten">a little code, a lot of care.</span>
+          <span className="handwritten">
+            trusted data, thoughtful engineering.
+          </span>
         </div>
         <div className="hero-bottom">
           <span>Python / SQL / PySpark / Azure</span>
@@ -113,11 +122,9 @@ export default function Home() {
       </section>
       <section className="wrap section earlier-projects" id="projects">
         <div className="section-heading" data-reveal>
-          <p className="eyebrow">02 / EARLIER PROJECTS</p>
+          <p className="eyebrow">02 / OTHER THINGS I’VE BUILT</p>
           <h2>
-            Earlier things
-            <br />
-            I’ve <em>built.</em>
+            Other Things I’ve <em>Built</em>
           </h2>
           <p>
             Earlier academic and personal projects in AI, mobile, and web
@@ -170,40 +177,69 @@ export default function Home() {
           {[
             [
               "01",
-              "Understand before building",
-              "Translate reporting and reconciliation requirements into source-to-target mappings, explicit comparison rules, and clear data models.",
+              "Understand the data",
+              "Understand source systems, business rules, schemas, and data contracts.",
+              "sources",
             ],
             [
               "02",
-              "Make reliability a feature",
-              "Validate schemas, missing values, duplicates, and referential integrity before data reaches reporting or reconciliation outputs.",
+              "Build reliable pipelines",
+              "Design scalable ingestion, transformation, and orchestration workflows.",
+              "pipeline",
             ],
             [
               "03",
-              "Ship, learn, refine",
-              "Plan for incremental loads, retries, pipeline monitoring, and discrepancy history. Validate releases with tests, UAT, and post-deployment checks.",
+              "Validate and reconcile",
+              "Implement data-quality controls, cross-system comparisons, and exception handling.",
+              "validation",
             ],
-          ].map(([n, title, text]) => (
+            [
+              "04",
+              "Optimize processing",
+              "Tune Spark workloads, joins, partitioning, and queries for performance.",
+              "processing",
+            ],
+            [
+              "05",
+              "Monitor and maintain",
+              "Implement logging, alerting, retries, testing, and production validation.",
+              "monitor",
+            ],
+          ].map(([n, title, text, stage]) => (
             <article data-reveal key={n}>
+              <EngineeringSketch stage={stage} />
               <span className="handwritten">{n}</span>
               <h3>{title}</h3>
               <p>{text}</p>
             </article>
           ))}
         </div>
-        <details className="skills">
-          <summary>
-            Data engineering toolkit <span aria-hidden="true">＋</span>
-          </summary>
-          <div className="skills-grid">
-            {skillGroups.map(([title, list]) => (
-              <div key={title}>
-                <h3>{title}</h3>
-                <p>{list}</p>
-              </div>
+        <section className="skills" id="skills" aria-labelledby="skills-title">
+          <h3 id="skills-title">Technical skills</h3>
+          <div className="tags primary-skills">
+            {[
+              "Python",
+              "PySpark",
+              "Azure",
+              "Databricks",
+              "SQL",
+              "Snowflake",
+            ].map((skill) => (
+              <span key={skill}>{skill}</span>
             ))}
           </div>
-        </details>
+          <div className="skills-grid">
+            {skillGroups.map(([title, list]) => (
+              <details key={title}>
+                <summary>
+                  {title}
+                  <span aria-hidden="true">＋</span>
+                </summary>
+                <p>{list}</p>
+              </details>
+            ))}
+          </div>
+        </section>
       </section>
       <section className="wrap section" id="experience">
         <div className="section-heading" data-reveal>
@@ -242,28 +278,27 @@ export default function Home() {
             Always a <em>learner.</em>
           </h2>
           <p>
-            I’m Hemasree Randhi, a Senior AI &amp; Data Engineer based in
-            Dallas. I build cloud data platforms and distributed processing
-            pipelines for financial services and telecommunications.
+            I’m a Senior Data Engineer with over six years of experience
+            building cloud-based data platforms and reliable data-processing
+            systems.
           </p>
           <p>
-            My work connects source data to decisions: reconciling records
-            across systems, validating data quality, and delivering curated
-            datasets for reporting and analysis. I work with engineering, QA,
-            finance, and business teams to make those systems maintainable and
-            dependable.
+            My work spans telecommunications and financial services, where I’ve
+            developed distributed PySpark pipelines, cross-system reconciliation
+            frameworks, automated data-quality controls, and analytics-ready
+            datasets.
           </p>
           <p>
-            I’m also exploring AI-assisted data profiling and investigation.
-            That research is separate from my verified professional data
-            engineering work.
+            I enjoy solving complex data problems, optimizing large-scale
+            processing workloads, and building maintainable systems that turn
+            raw enterprise data into trusted information.
           </p>
           <p className="education">
-            Current doctoral studies in AI
+            Master of Science in Computer Science · University of Central
+            Oklahoma
             <br />
-            MS, Computer Science · University of Central Oklahoma
-            <br />
-            BTech, Computer Science · Andhra University, India
+            Bachelor of Technology in Computer Science · Andhra University,
+            India
           </p>
         </div>
         <div className="about-art">
@@ -289,7 +324,7 @@ export default function Home() {
           </a>
           <div className="social-links">
             <a
-              href="https://www.linkedin.com/in/hemasree-randhi-6a4b6a7b/"
+              href="https://www.linkedin.com/in/hemasreerandhi/"
               target="_blank"
               rel="noopener noreferrer"
             >

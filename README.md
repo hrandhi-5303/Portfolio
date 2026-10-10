@@ -21,16 +21,20 @@ npm start
 
 ```sh
 npx tsc --noEmit
+npm run lint
 npm run build
 ```
 
 ## Content and integrations
 
 - Homepage: `app/page.tsx`; case-study and toolkit content: `content/portfolio.ts`.
-- Case studies: `/work/reconciliation-engine`, `/work/cloud-data-platform`, `/work/financial-data-reconciliation`, and `/work/ai-data-intelligence`.
-- Professional case studies and experience follow the current attached resume. AI & Data Intelligence remains a concept / proposed prototype. Existing academic and personal projects are retained in Earlier Projects. The public resume link now serves the current PDF. Doctoral study in AI is user-confirmed; institution, program title, and dates are omitted pending verification. React, Node.js, and full-stack work are not listed as current skills because the latest resume does not support them.
+- Case studies: `/work/reconciliation-engine`, `/work/financial-data-reconciliation`, `/work/telecom-data-analytics`, and `/work/ai-data-intelligence`.
+- Professional identity, experience, technical skills, education, and achievements follow the latest attached `Hemasree_Randhi.docx`. The primary case studies represent GlobalLogic (client: T-Mobile), Fiserv, and Sasken Technologies, in that order.
+- AI & Data Intelligence remains a separate, clearly labeled research concept. Earlier projects are retained in Other Things I've Built.
+- The current source resume is at `/Hemasree_Randhi.docx`. `/Hemasree_Resume.pdf` is a PDF conversion of its complete content, generated locally using Pandoc HTML and Chromium printing. The download links serve this current PDF.
+- Education includes only the MS at University of Central Oklahoma and BTech at Andhra University, India. No doctoral degree or unverified education dates are listed.
 - Original SVG art: `components/Illustration.tsx`. Motion respects reduced-motion preferences; scroll content remains visible without JavaScript.
-- The existing resume remains at `/Hemasree_Resume.pdf`.
+- The previous `/work/cloud-data-platform` URL redirects to the updated financial engineering case study.
 - The contact form retains Formspree endpoint `https://formspree.io/f/mblzgdob`, honeypot, submission fields, success/reset behavior, and error handling. Local preview needs internet access for actual delivery. Do not send test messages to the live endpoint for automated checks.
 - No photographs or stock imagery are rendered. The pre-existing photo file remains unused in the repository.
 
