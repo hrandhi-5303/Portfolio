@@ -32,7 +32,7 @@ npm run build
 - Professional identity, experience, technical skills, education, and achievements follow the latest attached `Hemasree_Randhi.docx`. The primary case studies represent GlobalLogic (client: T-Mobile), Fiserv, and Sasken Technologies, in that order.
 - AI & Data Intelligence remains a separate, clearly labeled research concept. Earlier projects are retained in Other Things I've Built.
 - The current source resume is at `/Hemasree_Randhi.docx`. `/Hemasree_Resume.pdf` is a PDF conversion of its complete content, generated locally using Pandoc HTML and Chromium printing. The download links serve this current PDF.
-- Education includes only the MS at University of Central Oklahoma and BTech at Andhra University, India. No doctoral degree or unverified education dates are listed.
+- Education includes the MS at University of Central Oklahoma and BTech at Andhra University, India, plus current PhD studies in Artificial Intelligence confirmed by the user. No doctoral institution or dates are specified.
 - Original SVG art: `components/Illustration.tsx`. Motion respects reduced-motion preferences; scroll content remains visible without JavaScript.
 - The previous `/work/cloud-data-platform` URL redirects to the updated financial engineering case study.
 - The contact form retains Formspree endpoint `https://formspree.io/f/mblzgdob`, honeypot, submission fields, success/reset behavior, and error handling. Local preview needs internet access for actual delivery. Do not send test messages to the live endpoint for automated checks.

@@ -294,6 +294,8 @@ export default function Home() {
             raw enterprise data into trusted information.
           </p>
           <p className="education">
+            Currently pursuing a PhD in Artificial Intelligence
+            <br />
             Master of Science in Computer Science · University of Central
             Oklahoma
             <br />
