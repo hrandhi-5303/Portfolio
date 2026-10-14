@@ -28,7 +28,8 @@ export default function Home() {
             I’m a Senior Data Engineer with 6+ years of experience building
             scalable cloud data platforms, distributed data pipelines,
             reconciliation frameworks, and analytics-ready solutions across
-            telecommunications and financial services.
+            telecommunications and financial services. I’m also currently
+            pursuing a PhD in Artificial Intelligence.
           </p>
           <p className="hero-note">
             My expertise includes Azure Data Factory, Azure Databricks, PySpark,
