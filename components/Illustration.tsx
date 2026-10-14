@@ -2,68 +2,121 @@ export function Developer() {
   return (
     <svg
       className="developer"
-      viewBox="0 0 440 430"
+      viewBox="0 0 440 350"
       role="img"
       aria-labelledby="developer-title"
     >
       <title id="developer-title">
-        Hand-drawn female data engineer waving hello beside a data pipeline
+        Hand-drawn woman with curly hair waving hello at her laptop, with a
+        coffee cup
       </title>
       <g
         fill="none"
         stroke="currentColor"
-        strokeWidth="2.5"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <path d="M34 353 Q204 348 410 356 M58 361 L54 410 M386 359 L392 410" />
+        {/* Chair and the outer silhouette of the curls. */}
+        <path d="M111 281 L105 205 Q104 183 123 179 L150 179 Q170 180 170 202 L168 281 M114 280 L112 205 Q112 190 129 189" />
         <path
-          d="M138 275 Q130 224 174 211 L252 215 Q286 244 290 304 L275 346 L132 345Z"
-          fill="#ffffff"
+          d="M127 106 Q112 94 122 78 Q121 58 142 54 Q148 32 173 33 Q195 21 212 40 Q236 40 242 61 Q263 70 254 91 Q270 110 255 126 Q266 143 253 160 Q265 181 253 197 Q264 216 248 228 Q254 246 236 254 Q226 269 212 252 L139 251 Q124 266 111 252 Q93 252 96 235 Q76 224 89 210 Q77 194 88 179 Q77 161 93 147 Q81 130 98 119 Q93 103 111 99Z"
+          fill="#fff"
         />
-        <path
-          d="M161 165 Q143 107 182 89 Q227 61 258 113 L271 217 Q242 234 221 204 L172 209 Q149 209 145 195Z"
-          fill="#111111"
-        />
-        <path
-          d="M174 128 Q182 122 194 111 Q209 139 244 134 L245 166 Q240 202 214 204 Q179 197 174 165Z"
-          fill="#ffffff"
-        />
-        <path d="M187 155 L192 156 M228 155 L233 154 M207 161 L204 173 L211 175 M198 183 Q209 192 222 181 M204 204 L201 219 M224 202 L232 219" />
-        <path d="M179 227 Q199 245 233 224 M152 247 Q132 277 116 280 M235 255 Q254 271 276 282" />
+        {/* Raised arm: a single group keeps the wave anchored at the shoulder. */}
         <g className="wave-arm">
           <path
-            d="M151 247 Q119 246 99 214 L82 180 L103 167 Q120 210 159 220"
-            fill="#ffffff"
+            d="M220 178 Q243 167 267 141 L291 114 L309 128 Q284 167 265 185 Q246 202 224 207Z"
+            fill="#fff"
           />
           <path
-            d="M82 180 Q67 164 64 150 L56 123 Q56 116 62 119 L74 140 L70 108 Q72 98 77 108 L85 134 L85 103 Q90 95 93 107 L95 134 L101 112 Q109 108 107 119 L104 148 Q119 131 123 138 Q126 142 109 161 L103 167"
-            fill="#ffffff"
+            d="M288 116 L300 104 Q301 96 298 88 Q297 81 302 82 L307 93 L310 75 Q312 67 317 72 L317 92 L324 73 Q330 68 330 75 L325 96 L337 81 Q344 79 340 86 L329 103 L339 96 Q347 95 342 102 L320 122 L309 128Z"
+            fill="#fff"
           />
+          <path d="M286 121 L303 136 M298 127 L299 128" />
         </g>
-        <path d="M119 287 Q126 278 143 283 L170 297 M270 284 Q292 276 311 298" />
-        <path d="M144 282 L310 284 L290 346 L166 343Z" fill="#ffffff" />
-        <path d="M156 349 L310 350 M185 307 Q194 301 203 307 Q194 313 185 307 V326 Q194 332 203 326 V307 M203 317 L219 317 M219 310 L235 310 L235 324 L219 324Z M235 317 L254 317 M254 310 L270 310 L270 324 L254 324Z" />
-        <path d="M336 316 L363 316 L360 346 L341 346Z M363 320 Q383 319 372 335 L362 337 M343 302 Q337 291 345 283 M355 302 Q361 292 356 285" />
-        <path d="M47 276 Q20 249 27 225 Q52 227 57 275 M57 274 Q67 237 86 236 Q89 263 57 284 M42 299 L70 299 L67 346 L47 346Z M56 299 L55 267" />
+        {/* Shirt, collar, and relaxed resting arm. */}
+        <path
+          d="M147 176 Q134 185 133 209 L123 280 L242 281 L231 216 Q225 184 209 177Z"
+          fill="#fff"
+        />
+        <path d="M155 169 L157 183 L176 196 L192 181 L195 167 M155 176 L147 193 L161 187 L169 208 L176 196 M192 181 L202 193 L195 211 L184 189 M176 199 L178 280 M140 215 L137 279" />
+        <circle cx="181" cy="218" r="1" fill="currentColor" />
+        <circle cx="182" cy="240" r="1" fill="currentColor" />
+        <circle cx="183" cy="261" r="1" fill="currentColor" />
+        {/* Face and soft, expressive features. */}
+        <path
+          d="M137 105 Q134 84 153 74 Q159 56 180 58 Q188 74 204 77 Q225 79 224 103 L221 129 Q216 160 186 169 Q158 168 142 146 Q135 130 137 105Z"
+          fill="#fff"
+        />
+        <path d="M146 108 Q153 104 160 108 M194 107 Q201 103 207 108 M175 122 Q180 129 174 132 M169 145 Q181 153 191 143" />
+        <ellipse
+          cx="153"
+          cy="121"
+          rx="3.5"
+          ry="5"
+          fill="currentColor"
+          stroke="none"
+        />
+        <ellipse
+          cx="200"
+          cy="121"
+          rx="3.5"
+          ry="5"
+          fill="currentColor"
+          stroke="none"
+        />
+        <circle cx="154" cy="119" r="1" fill="#fff" stroke="none" />
+        <circle cx="201" cy="119" r="1" fill="#fff" stroke="none" />
+        {/* Loose hand-drawn curls: every strand follows its own curve. */}
+        <path d="M127 103 Q119 87 134 80 Q137 62 154 60 Q161 42 180 45 Q198 34 210 51 Q229 49 233 66 Q251 75 241 91 Q255 105 244 118 Q256 133 243 145 Q253 164 239 173 Q250 190 237 201 Q249 218 233 230 Q240 244 223 244" />
+        <path d="M136 100 Q124 110 128 125 Q132 139 120 145 Q108 152 115 164 Q129 175 119 187 Q107 199 117 210 Q129 221 118 230 Q110 239 120 244 Q132 246 133 236 M140 149 Q145 161 132 172 Q127 178 131 188 Q142 199 131 210 Q122 221 133 228" />
+        <path d="M122 111 Q103 108 104 122 Q109 131 115 126 Q123 119 117 114 M102 146 Q93 155 101 164 Q113 170 116 158 M102 179 Q90 187 99 198 Q109 204 112 194 M97 213 Q92 222 104 229 Q114 231 112 222" />
+        <path d="M147 76 Q140 65 153 63 Q167 59 172 52 Q184 46 192 58 M151 84 Q150 71 166 70 Q177 71 180 61 M186 52 Q200 47 205 61 Q211 73 224 69 M198 61 Q199 73 214 79 Q232 86 226 101" />
+        <path d="M227 114 Q238 117 231 128 Q222 138 229 149 Q240 161 230 171 Q220 183 229 193 Q240 204 228 216 Q218 227 229 236 M240 129 Q249 124 249 134 Q249 142 243 145 M248 154 Q259 157 250 166 M241 185 Q251 189 246 196 M240 211 Q252 215 241 226" />
+        <path d="M148 158 Q154 172 145 183 Q139 192 146 202 M207 158 Q201 168 209 178 Q217 189 210 199 M110 88 Q107 80 116 75 M147 48 Q156 36 164 43 M218 42 Q230 44 231 53" />
+        {/* Desk, coffee, and an open laptop. */}
+        <path d="M35 282 Q182 280 408 283" />
+        <path d="M270 277 L222 295 L294 313 L355 291Z" fill="#fff" />
+        <path
+          d="M238 295 L282 305 M246 291 L289 302 M254 287 L295 298 M263 289 L256 298 M276 292 L269 302 M289 295 L282 305"
+          strokeWidth="1.4"
+        />
+        <path
+          d="M290 311 L309 238 Q311 231 319 230 L389 219 Q394 219 391 227 L372 294Z"
+          fill="#fff"
+        />
+        <path d="M288 313 L369 297" />
+        <path
+          d="M115 295 Q91 289 90 307 Q89 324 110 324 L110 315 Q99 316 100 307 Q100 303 113 304"
+          fill="#b98a53"
+        />
+        <path
+          d="M109 293 Q132 283 155 293 L151 322 Q148 337 132 337 Q113 336 110 321Z"
+          fill="#b98a53"
+        />
+        <ellipse cx="132" cy="294" rx="23" ry="6" fill="#b98a53" />
+        <path
+          d="M114 294 Q132 288 149 294 Q134 300 114 294 M121 339 Q132 342 145 338"
+          strokeWidth="1.5"
+        />
         <g className="hi-bubble">
           <path
-            d="M294 68 Q319 51 352 63 Q375 74 365 102 Q351 121 320 109 L299 126 L304 105 Q282 91 294 68Z"
-            fill="#ffffff"
+            d="M348 44 Q371 29 395 43 Q410 55 397 71 Q383 82 365 73 L350 85 L355 69 Q339 58 348 44Z"
+            fill="#fff"
           />
           <text
-            x="316"
-            y="94"
+            x="365"
+            y="62"
             stroke="none"
             fill="currentColor"
-            fontSize="25"
-            fontFamily="Georgia, serif"
+            fontSize="20"
+            fontFamily="Georgia,serif"
             fontStyle="italic"
           >
             hi!
           </text>
         </g>
-        <path d="M311 184 L315 173 L319 184 L330 188 L319 191 L315 202 L311 191 L300 188Z M119 69 L124 56 M111 74 L98 70 M133 76 L142 68" />
       </g>
     </svg>
   );
