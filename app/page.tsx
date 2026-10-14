@@ -25,11 +25,12 @@ export default function Home() {
             I engineer data systems that power <em>real-world decisions.</em>
           </h1>
           <p className="intro">
-            I’m a Senior Data Engineer with 6+ years of experience building
-            scalable cloud data platforms, distributed data pipelines,
-            reconciliation frameworks, and analytics-ready solutions across
-            telecommunications and financial services. I’m also currently
-            pursuing a PhD in Artificial Intelligence.
+            I’m a Senior Data Engineer and PhD student in Artificial Intelligence,
+            with 6+ years of experience building cloud data platforms,
+            distributed pipelines, and reconciliation frameworks across
+            telecommunications and financial services. My work focuses on
+            turning complex enterprise data into reliable, analytics-ready
+            datasets.
           </p>
           <p className="hero-note">
             My expertise includes Azure Data Factory, Azure Databricks, PySpark,
