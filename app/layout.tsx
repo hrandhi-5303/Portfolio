@@ -13,7 +13,9 @@ export const metadata = {
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
     ],
     shortcut: "/favicon.ico",
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
   openGraph: { title, description, type: "website" },
   twitter: { card: "summary", title, description },
@@ -35,7 +37,7 @@ export default function RootLayout({
         </a>
         <header className="site-header">
           <Link className="wordmark" href="/">
-            hemasree randhi<span aria-hidden="true"> ✳</span>
+            hemasree randhi
           </Link>
           <nav aria-label="Main navigation">
             <Link href="/#work">Work</Link>

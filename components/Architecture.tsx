@@ -161,7 +161,7 @@ export default function Architecture({ kind }: { kind: Kind }) {
               <path
                 key={node.label}
                 d={`M${node.x} ${node.y + 2} Q${node.x + node.w / 2} ${node.y - 3} ${node.x + node.w} ${node.y} L${node.x + node.w - 2} ${node.y + node.h} Q${node.x + node.w / 2} ${node.y + node.h + 4} ${node.x} ${node.y + node.h}Z`}
-                fill="#f8f5ed"
+                fill="#ffffff"
               />
             ))}
           </g>

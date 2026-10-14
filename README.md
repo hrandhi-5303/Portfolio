@@ -1,6 +1,6 @@
 # Hemasree Randhi — Portfolio
 
-A responsive Next.js portfolio with an ivory palette, original inline SVG illustrations, a greeting animation, and four case-study routes.
+A responsive Next.js portfolio with a white minimalist layout, original inline SVG illustrations, a greeting animation, and four case-study routes.
 
 ## Preview locally
 
@@ -39,3 +39,7 @@ npm run build
 - No photographs or stock imagery are rendered. The pre-existing photo file remains unused in the repository.
 
 Changes are isolated to `feature/portfolio-redesign`. No merge or production deployment is included.
+
+## Visual direction
+
+The layout uses bold sans-serif headlines, small monospaced navigation and section labels, generous whitespace, and thin dividers. The waving illustration sits above the homepage introduction. Selected work uses illustrated text rows; earlier projects use a compact gallery; engineering steps use small diagrams; skills use expandable categories; experience uses a dated timeline. About, Contact, and case studies share the same restrained styling. The design is inspired by the supplied reference while retaining original artwork and verified portfolio content.

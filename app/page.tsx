@@ -15,12 +15,15 @@ export default function Home() {
   return (
     <>
       <section className="hero wrap" id="home">
+        <div className="hero-art">
+          <Developer />
+        </div>
         <div className="hero-copy">
           <p className="eyebrow">HEMASREE RANDHI · SENIOR DATA ENGINEER</p>
+          <p className="hero-intro">Hi, I’m Hemasree.</p>
           <h1 className="data-headline">
             I engineer data systems that power <em>real-world decisions.</em>
           </h1>
-          <p className="hero-intro">Hi, I’m Hemasree.</p>
           <p className="intro">
             I’m a Senior Data Engineer with 6+ years of experience building
             scalable cloud data platforms, distributed data pipelines,
@@ -32,8 +35,8 @@ export default function Home() {
             Spark SQL, Snowflake, Oracle, and Delta Lake.
           </p>
           <div className="hero-links">
-            <a className="button" href="#work">
-              Explore my work <span aria-hidden="true">↓</span>
+            <a className="text-link primary-link" href="#work">
+              See the work <span aria-hidden="true">↓</span>
             </a>
             <a
               className="text-link"
@@ -46,12 +49,6 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className="hero-art">
-          <Developer />
-          <span className="handwritten">
-            trusted data, thoughtful engineering.
-          </span>
-        </div>
         <div className="hero-bottom">
           <span>Python / SQL / PySpark / Azure</span>
           <a href="#work">SCROLL TO EXPLORE ↓</a>
@@ -60,11 +57,7 @@ export default function Home() {
       <section className="wrap section" id="work">
         <div className="section-heading" data-reveal>
           <p className="eyebrow">01 / SELECTED WORK</p>
-          <h2>
-            From complexity
-            <br />
-            to <em>clarity.</em>
-          </h2>
+          <h2>Selected work</h2>
           <p>
             A closer look at the systems, decisions,
             <br className="desktop-break" /> and ideas behind the work.
@@ -86,6 +79,7 @@ export default function Home() {
                 <h3>{study.title}</h3>
                 <p>{study.summary}</p>
                 <span className="project-status">{study.status}</span>
+                <span className="case-link">Read case study →</span>
               </div>
               <span className="work-arrow" aria-hidden="true">
                 ↗
@@ -97,9 +91,7 @@ export default function Home() {
       <section className="wrap section research" id="research">
         <div className="section-heading" data-reveal>
           <p className="eyebrow">RESEARCH / AI EXPLORATION</p>
-          <h2>
-            From data to <em>intelligence.</em>
-          </h2>
+          <h2>Research &amp; exploration</h2>
           <p>Proposed prototypes, kept separate from professional delivery.</p>
         </div>
         <Link
@@ -167,11 +159,7 @@ export default function Home() {
       <section className="wrap section" id="engineering">
         <div className="section-heading" data-reveal>
           <p className="eyebrow">03 / HOW I ENGINEER</p>
-          <h2>
-            Care in the details.
-            <br />
-            Confidence in the <em>system.</em>
-          </h2>
+          <h2>How I engineer</h2>
         </div>
         <div className="principles">
           {[
@@ -244,9 +232,7 @@ export default function Home() {
       <section className="wrap section" id="experience">
         <div className="section-heading" data-reveal>
           <p className="eyebrow">04 / EXPERIENCE</p>
-          <h2>
-            The path <em>here.</em>
-          </h2>
+          <h2>Experience</h2>
           <p>
             Over six years engineering enterprise data systems across
             telecommunications and financial services.
@@ -272,11 +258,7 @@ export default function Home() {
       <section className="wrap section about" id="about" data-reveal>
         <div>
           <p className="eyebrow">05 / A LITTLE ABOUT ME</p>
-          <h2>
-            An engineer.
-            <br />
-            Always a <em>learner.</em>
-          </h2>
+          <h2>A little about me</h2>
           <p>
             I’m a Senior Data Engineer with over six years of experience
             building cloud-based data platforms and reliable data-processing
@@ -311,11 +293,7 @@ export default function Home() {
       <section className="wrap section contact" id="contact">
         <div data-reveal>
           <p className="eyebrow">06 / CONTACT</p>
-          <h2>
-            Let’s make
-            <br />
-            something <em>good.</em>
-          </h2>
+          <h2>Let’s talk.</h2>
           <p>
             Have a project, an opportunity, or a thoughtful question?
             <br />
