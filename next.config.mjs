@@ -4,6 +4,12 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.hemasreerandhi.com" }],
+        destination: "https://hemasreerandhi.com/:path*",
+        permanent: true,
+      },
+      {
         source: "/work/cloud-data-platform",
         destination: "/work/financial-data-reconciliation",
         permanent: true,

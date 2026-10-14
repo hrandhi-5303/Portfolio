@@ -6,6 +6,10 @@
   --ink: #0a0a0a;
   --muted: #595959;
   --line: #e5e5e5;
+  --motion-hover: 200ms;
+  --motion-enter: 700ms;
+  --motion-greeting: 2500ms;
+  --motion-data: 3200ms;
   --mono: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
 }
 * {
@@ -284,7 +288,7 @@ p {
 }
 .work-arrow {
   font-size: 24px;
-  transition: transform 0.2s;
+  transition: transform var(--motion-hover);
 }
 .work-row:hover .work-arrow {
   transform: translate(3px, -3px);
@@ -519,8 +523,8 @@ p {
   border: 1px solid var(--ink);
   border-radius: 0;
   transition:
-    background 0.2s,
-    color 0.2s;
+    background var(--motion-hover),
+    color var(--motion-hover);
   cursor: pointer;
 }
 .button:hover {
@@ -652,8 +656,8 @@ p {
   opacity: 0;
   transform: translateY(14px);
   transition:
-    opacity 0.7s ease,
-    transform 0.7s ease;
+    opacity var(--motion-enter) ease,
+    transform var(--motion-enter) ease;
 }
 .reveal-ready.revealed {
   opacity: 1;
@@ -661,13 +665,13 @@ p {
 }
 .wave-arm {
   transform-origin: 228px 185px;
-  animation: wave 2.5s ease-in-out 0.3s 1;
+  animation: wave var(--motion-greeting) ease-in-out 0.3s 1;
 }
 .hi-bubble {
-  animation: hello 3.8s ease both;
+  animation: hello var(--motion-greeting) ease both;
 }
 .flow-dot {
-  animation: data-flow 3.2s linear infinite;
+  animation: data-flow var(--motion-data) linear infinite;
   offset-distance: 0%;
 }
 @keyframes wave {
@@ -988,4 +992,77 @@ p {
   }
 }
 
-.site-header nav { text-transform: lowercase; }
+.site-header nav {
+  text-transform: lowercase;
+}
+/* Vector link icons share one size and stay in normal document/grid flow. */
+.nav-arrow {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  vertical-align: -3px;
+  overflow: visible;
+}
+.nav-arrow-right {
+  transform: rotate(45deg);
+}
+.nav-arrow-down {
+  transform: rotate(135deg);
+}
+.nav-arrow-left {
+  transform: rotate(225deg);
+}
+.work-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: end;
+  width: 24px;
+  height: 24px;
+  min-width: 0;
+}
+.work-row > div:not(.work-art) {
+  min-width: 0;
+}
+.work-row h3,
+.work-row p,
+.project-status,
+.case-header h1,
+.next-study > span:last-child {
+  overflow-wrap: anywhere;
+}
+.email-link {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+.social-links {
+  flex-wrap: wrap;
+  row-gap: 16px;
+}
+.illustration,
+.sketch,
+.engineering-sketch,
+.developer {
+  color: var(--ink);
+}
+@media (max-width: 600px) {
+  .work-row {
+    grid-template-columns: minmax(0, 1fr) 24px;
+    column-gap: 14px;
+  }
+  .work-arrow {
+    align-self: start;
+    margin-top: 24px;
+  }
+  .research .work-arrow {
+    margin-top: 0;
+  }
+  .email-link {
+    font-size: 17px;
+  }
+  .site-footer a {
+    overflow-wrap: anywhere;
+  }
+}

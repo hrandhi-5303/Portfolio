@@ -139,7 +139,7 @@ export default function Architecture({ kind }: { kind: Kind }) {
           <g
             fill="none"
             stroke="currentColor"
-            strokeWidth="1.7"
+            strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
           >

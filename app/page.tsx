@@ -1,3 +1,4 @@
+import ArrowUpRight from "@/components/ArrowUpRight";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
 import {
@@ -25,10 +26,10 @@ export default function Home() {
             I engineer data systems that power <em>real-world decisions.</em>
           </h1>
           <p className="intro">
-            I’m a Senior Data Engineer and PhD student in Artificial Intelligence,
-            with 6+ years of experience building cloud data platforms,
-            distributed pipelines, and reconciliation frameworks across
-            telecommunications and financial services. My work focuses on
+            I’m a Senior Data Engineer and PhD student in Artificial
+            Intelligence, with 6+ years of experience building cloud data
+            platforms, distributed pipelines, and reconciliation frameworks
+            across telecommunications and financial services. My work focuses on
             turning complex enterprise data into reliable, analytics-ready
             datasets.
           </p>
@@ -38,7 +39,7 @@ export default function Home() {
           </p>
           <div className="hero-links">
             <a className="text-link primary-link" href="#work">
-              See the work <span aria-hidden="true">↓</span>
+              See the work <ArrowUpRight direction="down" />
             </a>
             <a
               className="text-link"
@@ -47,13 +48,15 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Download Resume ↓
+              Download Resume <ArrowUpRight direction="down" />
             </a>
           </div>
         </div>
         <div className="hero-bottom">
           <span>Python / SQL / PySpark / Azure</span>
-          <a href="#work">SCROLL TO EXPLORE ↓</a>
+          <a href="#work">
+            SCROLL TO EXPLORE <ArrowUpRight direction="down" />
+          </a>
         </div>
       </section>
       <section className="wrap section" id="work">
@@ -81,10 +84,12 @@ export default function Home() {
                 <h3>{study.title}</h3>
                 <p>{study.summary}</p>
                 <span className="project-status">{study.status}</span>
-                <span className="case-link">Read case study →</span>
+                <span className="case-link">
+                  Read case study <ArrowUpRight direction="right" />
+                </span>
               </div>
               <span className="work-arrow" aria-hidden="true">
-                ↗
+                <ArrowUpRight />
               </span>
             </Link>
           ))}
@@ -110,7 +115,7 @@ export default function Home() {
             <span className="project-status">{researchStudy.status}</span>
           </div>
           <span className="work-arrow" aria-hidden="true">
-            ↗
+            <ArrowUpRight />
           </span>
         </Link>
       </section>
@@ -302,7 +307,7 @@ export default function Home() {
             I’d love to hear from you.
           </p>
           <a className="email-link" href="mailto:hemasree9767@gmail.com">
-            hemasree9767@gmail.com ↗
+            hemasree9767@gmail.com <ArrowUpRight />
           </a>
           <div className="social-links">
             <a
@@ -310,14 +315,14 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              LinkedIn ↗
+              LinkedIn <ArrowUpRight />
             </a>
             <a
               href="https://github.com/hrandhi-5303"
               target="_blank"
               rel="noopener noreferrer"
             >
-              GitHub ↗
+              GitHub <ArrowUpRight />
             </a>
           </div>
           <Sketch kind="mail" />

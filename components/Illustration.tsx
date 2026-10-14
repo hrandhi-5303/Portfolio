@@ -80,7 +80,7 @@ export function Developer() {
         <path d="M270 277 L222 295 L294 313 L355 291Z" fill="#fff" />
         <path
           d="M238 295 L282 305 M246 291 L289 302 M254 287 L295 298 M263 289 L256 298 M276 292 L269 302 M289 295 L282 305"
-          strokeWidth="1.4"
+          strokeWidth="2"
         />
         <path
           d="M290 311 L309 238 Q311 231 319 230 L389 219 Q394 219 391 227 L372 294Z"
@@ -98,7 +98,7 @@ export function Developer() {
         <ellipse cx="132" cy="294" rx="23" ry="6" fill="#b98a53" />
         <path
           d="M114 294 Q132 288 149 294 Q134 300 114 294 M121 339 Q132 342 145 338"
-          strokeWidth="1.5"
+          strokeWidth="2"
         />
         <g className="hi-bubble">
           <path

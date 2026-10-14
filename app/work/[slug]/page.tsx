@@ -1,3 +1,6 @@
+import ArrowUpRight from "@/components/ArrowUpRight";
+import { siteUrl } from "@/lib/seo";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { studies } from "@/content/portfolio";
@@ -6,16 +9,21 @@ import { Sketch } from "@/components/Illustration";
 export function generateStaticParams() {
   return studies.map(({ slug }) => ({ slug }));
 }
-export function generateMetadata({ params }: { params: { slug: string } }) {
+export function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Metadata {
   const study = studies.find((s) => s.slug === params.slug);
+  if (!study) notFound();
+  const title = `${study.fullTitle} | Hemasree Randhi`;
+  const url = `${siteUrl}/work/${study.slug}`;
   return {
-    description: study?.summary,
-    openGraph: {
-      title: study?.fullTitle,
-      description: study?.summary,
-      type: "article",
-    },
-    title: study ? `${study.title} — Hemasree Randhi` : "Case study not found",
+    title,
+    description: study.summary,
+    alternates: { canonical: url },
+    openGraph: { title, description: study.summary, url, type: "article" },
+    twitter: { card: "summary", title, description: study.summary },
   };
 }
 export default function CaseStudy({ params }: { params: { slug: string } }) {
@@ -28,7 +36,7 @@ export default function CaseStudy({ params }: { params: { slug: string } }) {
         className="text-link"
         href={study.slug === "ai-data-intelligence" ? "/#research" : "/#work"}
       >
-        ← Back to portfolio
+        <ArrowUpRight direction="left" /> Back to portfolio
       </Link>
       <header className="case-header">
         <div>
@@ -86,7 +94,9 @@ export default function CaseStudy({ params }: { params: { slug: string } }) {
       </div>
       <Link className="next-study" href={`/work/${next.slug}`}>
         <span className="eyebrow">NEXT CASE STUDY</span>
-        <span>{next.title} ↗</span>
+        <span>
+          {next.title} <ArrowUpRight />
+        </span>
       </Link>
     </article>
   );

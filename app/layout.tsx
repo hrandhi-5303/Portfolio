@@ -1,10 +1,17 @@
 import "./globals.css";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
-const title = "Hemasree Randhi | Senior Data Engineer";
-const description =
-  "Senior Data Engineer with 6+ years building Azure data platforms, distributed PySpark pipelines, telecom and financial reconciliation frameworks, and analytics-ready datasets.";
-export const metadata = {
+import type { Metadata } from "next";
+import ArrowUpRight from "@/components/ArrowUpRight";
+import {
+  siteUrl,
+  siteTitle as title,
+  siteDescription as description,
+  person,
+} from "@/lib/seo";
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  alternates: { canonical: siteUrl },
   manifest: "/site.webmanifest",
   icons: {
     icon: [
@@ -17,11 +24,17 @@ export const metadata = {
       { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
-  openGraph: { title, description, type: "website" },
+  openGraph: {
+    title,
+    description,
+    url: siteUrl,
+    siteName: "Hemasree Randhi",
+    type: "website",
+    locale: "en_US",
+  },
   twitter: { card: "summary", title, description },
-  title: "Hemasree Randhi | Senior Data Engineer",
-  description:
-    "Senior Data Engineer building Azure data platforms, distributed PySpark pipelines, telecom and financial reconciliation systems, and analytics-ready datasets.",
+  title,
+  description,
 };
 export const viewport = { width: "device-width", initialScale: 1 };
 export default function RootLayout({
@@ -32,6 +45,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(person).replace(/</g, "\\u003c"),
+          }}
+        />
         <a className="skip-link" href="#main">
           Skip to content
         </a>
@@ -45,7 +64,7 @@ export default function RootLayout({
             <Link href="/#skills">Skills</Link>
             <Link href="/#about">About</Link>
             <Link href="/#contact">
-              Contact <span aria-hidden="true">↗</span>
+              Contact <ArrowUpRight />
             </Link>
           </nav>
         </header>
@@ -59,7 +78,7 @@ export default function RootLayout({
             target="_blank"
             rel="noopener noreferrer"
           >
-            Download Resume (PDF) ↓
+            Download Resume (PDF) <ArrowUpRight direction="down" />
           </a>
         </footer>
         <ScrollReveal />
